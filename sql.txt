@@ -1,0 +1,17 @@
+create database p4n45;
+
+create table amrita(
+employeeid int primary key,
+firstname varchar(20),
+lastname varchar(20),
+department varchar(20),
+salary numeric
+);
+
+select * from amrita;
+
+insert into amrita values(101, 'John', 'Doe', 'IT', 60000);
+
+update amrita set Salary = 65000 where EmployeeID = 101;
+
+delete from amrita where EmployeeID = 101;
