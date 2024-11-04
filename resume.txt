@@ -1,0 +1,53 @@
+def Build_resume():
+    print("Let's create your resume!")
+
+    # Collecting personal information
+    name = input("Enter your full name: ")
+    email = input("Enter your email address: ")
+    phone = input("Enter your phone number: ")
+    address = input("Enter your address: ")
+
+    # Collecting education details
+    education = []
+    while True:
+        college = input("Enter your college/university name (or 'done' to finish): ")
+        if college.lower() == 'done':
+            break
+        degree = input("Enter your degree: ")
+        graduation_year = input("Enter your graduation year: ")
+        education.append((college, degree, graduation_year))
+
+    # Collecting work experience
+    work_experience = []
+    while True:
+        job_title = input("Enter your job title (or 'done' to finish): ")
+        if job_title.lower() == 'done':
+            break
+        company = input("Enter the company name: ")
+        start_date = input("Enter the start date (e.g., Jan 2020): ")
+        end_date = input("Enter the end date (e.g., Dec 2021 or 'present'): ")
+        work_experience.append((job_title, company, start_date, end_date))
+
+    # Collecting skills
+    skills = input("Enter your skills (comma-separated): ").split(',')
+
+    # Formatting and printing the resume
+    print("\n--- Your Resume ---")
+    print(f"Name: {name}")
+    print(f"Email: {email}")
+    print(f"Phone: {phone}")
+    print(f"Address: {address}\n")
+
+    print("Education:")
+    for college, degree, year in education:
+        print(f"- {degree}, {college} ({year})")
+
+    print("\nWork Experience:")
+    for job_title, company, start_date, end_date in work_experience:
+        print(f"- {job_title} at {company} ({start_date} to {end_date})")
+
+    print("\nSkills:")
+    print(", ".join(skill.strip() for skill in skills))
+
+if __name__ == "__main__":
+    collect_resume_details()
